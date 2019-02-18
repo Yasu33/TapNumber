@@ -14,6 +14,7 @@
 		E12BF5FF221A8CAC007B991A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E12BF5FD221A8CAC007B991A /* LaunchScreen.storyboard */; };
 		E12BF60A221A8CAC007B991A /* TapNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12BF609221A8CAC007B991A /* TapNumberTests.swift */; };
 		E12BF615221A8CAC007B991A /* TapNumberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12BF614221A8CAC007B991A /* TapNumberUITests.swift */; };
+		E12BF623221A8F63007B991A /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12BF622221A8F63007B991A /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E12BF610221A8CAC007B991A /* TapNumberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapNumberUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12BF614221A8CAC007B991A /* TapNumberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapNumberUITests.swift; sourceTree = "<group>"; };
 		E12BF616221A8CAC007B991A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E12BF622221A8F63007B991A /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				E12BF5FB221A8CAC007B991A /* Assets.xcassets */,
 				E12BF5FD221A8CAC007B991A /* LaunchScreen.storyboard */,
 				E12BF600221A8CAC007B991A /* Info.plist */,
+				E12BF622221A8F63007B991A /* ResultViewController.swift */,
 			);
 			path = TapNumber;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				E12BF5F7221A8CAB007B991A /* ViewController.swift in Sources */,
 				E12BF5F5221A8CAB007B991A /* AppDelegate.swift in Sources */,
+				E12BF623221A8F63007B991A /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
