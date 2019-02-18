@@ -74,7 +74,7 @@ class ViewController: UIViewController {
     
     func displayNum() {
         for i in 0...8 {
-            button[i].titleLabel?.text = String(numberArray[i])
+            button[i].setTitle(String(numberArray[i]), for: .normal)
         }
     }
     
