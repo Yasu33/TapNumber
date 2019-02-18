@@ -14,28 +14,26 @@ class ViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     
     @IBOutlet var button: [UIButton]!
-        
-    var timerCounter: Float = 0.0
     
+    var answer: Int = 0
     var score: Int = 0
     var numberArray = [Int]()
     
+    var timerCounter: Float = 0.0
     var timer: Timer!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        shuffle()
-        displayNum()
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.count), userInfo: nil, repeats: true)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        timer.invalidate()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        answer = 0
+        score = 0
+        scoreLabel.text = String(score)
+        shuffle()
+        displayNum()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,6 +50,7 @@ class ViewController: UIViewController {
         if timerCounter >= 15.0 {
             timerLabel.text = "0.0"
             timerCounter = 0.0
+            timer.invalidate()
             segueToResultView()
         }
         
@@ -62,6 +61,8 @@ class ViewController: UIViewController {
     }
     
     func shuffle() {
+        // numberArrayの初期化
+        numberArray = []
         // 一時的に数字を保存しておく配列
         var tmpArray: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8]
         while tmpArray.count > 0 {
@@ -79,7 +80,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func check(sender: UIButton){
-        
+        if answer == numberArray[sender.tag] {
+            score += 10
+            button[sender.tag].setTitle("", for: .normal)
+            scoreLabel.text = String(score)
+            answer += 1
+            
+            if answer == 9 {
+                answer = 0
+                shuffle()
+                displayNum()
+            }
+        }
     }
 
 
